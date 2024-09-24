@@ -1,0 +1,95 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: portfolio-html
+  labels:
+    desafio: jackexperts
+data:
+  index.html: |
+    <!DOCTYPE html>
+    <html lang="pt-BR">
+      <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Portfolio Responsivo</title>
+    
+        <!-- box icons -->
+        <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+    
+        <!-- custom css -->
+        <link rel="stylesheet" href="css/style.css" />
+      </head>
+    
+      <body>
+        <header class="header">
+          <a href="#" class="logo">Portfolio</a>
+          <i class='bx bx-menu' id="menu-icon"></i>
+          <nav class="navbar">
+            <a href="#home" class="active">Home</a>
+            <a href="#about">Sobre</a>
+            <a href="#services">Experiência</a>
+          </nav>
+        </header>
+    
+        <!-- scroll reveal -->
+        <script src="https://unpkg.com/scrollreveal"></script>
+    
+        <!-- typed js -->
+        <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    
+        <section class="home" id="home"> 
+          <div class="home-content">
+              <h3>Olá</h3>
+              <h1>Me Chamo Hermanio Santana</h1>
+              <h3>Sou um <span>Engenheiro DevOps</span></h3>
+              <p>Estou cursando Engenharia de Software na Universidade Federal do Ceará (UFC) 
+                campus de Russas, atualmente no 7° semestre.</p>
+                <div class="social-media">
+                  <a href="#"><i class='bx bxl-linkedin'></i></a>
+                  <a href="#"><i class='bx bxl-whatsapp' ></i></a>
+                  <a href="#"><i class='bx bxl-github' ></i></a>
+                </div>
+                <a href="#" class="btn">Download CV</a>
+          </div>
+        </section>
+    
+        <section class="about" id="about">
+          <div class="about-content">
+            <h2 class="heading">Sobre <span>Mim</span></h2>
+            <h3>Engenheiro DevOps</h3>
+            <p>Atuo como Engenheiro DevOps com experiência abrangente em Azure DevOps, Kubernetes, Docker,
+              Rancher, Helm e AWS. Especialista em migração de aplicativos .NET 4.8 para .NET 6 e criação de
+              pipelines CI/CD para garantir entrega contínua e integração eficiente de código. Competente na gestão
+              de servidores IIS, automação de tarefas com Shell Script e monitoramento de aplicações usando Elastic
+              e Kibana. Foco na configuração e otimização de ambientes complexos, garantindo soluções robustas e
+              escaláveis.</p>
+          </div>
+        </section> 
+    
+        <section class="services" id="services">
+          <h2 class="heading"> <span>Experiências</span></h2>
+    
+          <div class="services-container">
+            <div class="services-box">
+              <i class='bx bx-code-alt'></i>
+              <h3>Desenvolvedor Back-end</h3>
+              <p>Desenvolvimento em JavaScript, React.js e Node.js.
+                Integração de Bancos de Dados.
+                Implementação de API de Pagamento.
+                Desenvolvimento Orientado para Plataforma de E-commerce.
+                Melhoria Contínua e Funcionalidades Avançadas.</p>
+            </div>
+            
+            <div class="services-box">
+              <i class='bx bxs-terminal'></i>
+              <h3>Engenheiro DevOps</h3>
+              <p>Tenho experiência com Kubernetes, Docker, AWS, CI/CD e bancos de dados. Curto trabalhar com automação e otimização de infraestrutura na nuvem, sempre buscando deixar tudo mais eficiente e rodando bem.</p>
+            </div>
+          </div>
+        </section>
+    
+        <!-- custom js -->
+        <script src="js/script.js"></script>
+      </body>
+    </html>
