@@ -1,0 +1,23 @@
+pageTitle: "Portfolio Responsivo"
+logoText: "Portfolio"
+greeting: "Olá"
+mainHeading: "Me Chamo Hermanio Santana"
+jobTitle: "Engenheiro DevOps"
+description: "Estou cursando Engenharia de Software na Universidade Federal do Ceará (UFC)..."
+aboutDescription: "Atuo como Engenheiro DevOps com experiência abrangente em Azure DevOps, Kubernetes, Docker,
+            Rancher, Helm e AWS. Especialista em migração de aplicativos .NET 4.8 para .NET 6 e criação de
+            pipelines CI/CD para garantir entrega contínua e integração eficiente de código. Competente na gestão
+            de servidores IIS, automação de tarefas com Shell Script e monitoramento de aplicações usando Elastic
+            e Kibana. Foco na configuração e otimização de ambientes complexos, garantindo soluções robustas e
+            escaláveis."
+backendExperience: "Desenvolvimento em JavaScript, React.js e Node.js.
+              Integração de Bancos de Dados.
+              Implementação de API de Pagamento.
+              Desenvolvimento Orientado para Plataforma de E-commerce.
+              Melhoria Contínua e Funcionalidades Avançadas."
+devOpsExperience: "Tenho experiência com Kubernetes, Docker, AWS, CI/CD e bancos de dados. Curto trabalhar com automação e otimização de infraestrutura na nuvem, sempre buscando deixar tudo mais eficiente e rodando bem."
+linkedin: "https://www.linkedin.com/in/seu-linkedin"
+whatsapp: "https://wa.me/seu-numero"
+github: "https://github.com/seu-usuario"
+cvLink: "https://seu-portfolio.com/cv.pdf"
+
