@@ -1,0 +1,85 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: portfolio-html
+  labels:
+    desafio: jackexperts
+data:
+  index.html: |
+    <!DOCTYPE html>
+    <html lang="pt-BR">
+      <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>{{ .Values.pageTitle }}</title>
+
+        <!-- box icons -->
+        <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+
+        <!-- custom css -->
+        <link rel="stylesheet" href="css/style.css" />
+      </head>
+
+      <body>
+        <header class="header">
+          <a href="#" class="logo">{{ .Values.logoText }}</a>
+          <i class='bx bx-menu' id="menu-icon"></i>
+          <nav class="navbar">
+            <a href="#home" class="active">Home</a>
+            <a href="#about">Sobre</a>
+            <a href="#services">Experiência</a>
+          </nav>
+        </header>
+
+        <!-- scroll reveal -->
+        <script src="https://unpkg.com/scrollreveal"></script>
+
+        <!-- typed js -->
+        <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+
+        <section class="home" id="home"> 
+          <div class="home-content">
+              <h3>{{ .Values.greeting }}</h3>
+              <h1>{{ .Values.mainHeading }}</h1>
+              <h3>Sou um <span>{{ .Values.jobTitle }}</span></h3>
+              <p>{{ .Values.description }}</p>
+                <div class="social-media">
+                  <a href="{{ .Values.linkedin }}"><i class='bx bxl-linkedin'></i></a>
+                  <a href="{{ .Values.whatsapp }}"><i class='bx bxl-whatsapp' ></i></a>
+                  <a href="{{ .Values.github }}"><i class='bx bxl-github' ></i></a>
+                </div>
+                <a href="{{ .Values.cvLink }}" class="btn">Download CV</a>
+          </div>
+        </section>
+
+        <section class="about" id="about">
+          <div class="about-content">
+            <h2 class="heading">Sobre <span>Mim</span></h2>
+            <h3>{{ .Values.jobTitle }}</h3>
+            <p>{{ .Values.aboutDescription }}</p>
+          </div>
+        </section> 
+
+        <section class="services" id="services">
+          <h2 class="heading"> <span>Experiências</span></h2>
+
+          <div class="services-container">
+            <div class="services-box">
+              <i class='bx bx-code-alt'></i>
+              <h3>Desenvolvedor Back-end</h3>
+              <p>{{ .Values.backendExperience }}</p>
+            </div>
+            
+            <div class="services-box">
+              <i class='bx bxs-terminal'></i>
+              <h3>Engenheiro DevOps</h3>
+              <p>{{ .Values.devOpsExperience }}</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- custom js -->
+        <script src="js/script.js"></script>
+      </body>
+    </html>
