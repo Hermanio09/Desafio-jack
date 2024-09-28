@@ -1,0 +1,22 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: {{ .Values.geral.releaseName }}-ingress
+  namespace: {{ .Values.geral.namespace }}
+  labels:
+    app: {{ .Values.geral.releaseName }}
+    desafio: {{ .Values.geral.labels.desafio }}
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /
+spec:
+  rules:
+    - host: {{ .Values.ingress.host }}
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: {{ .Values.geral.releaseName }}-service
+                port:
+                  number: 80

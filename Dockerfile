@@ -3,6 +3,7 @@ FROM nginx:latest
 RUN useradd -M -s /sbin/nologin myuser
 
 COPY ./index.html /usr/share/nginx/html/index.html
+COPY ./css /usr/share/nginx/html/css
 
 RUN mkdir -p /var/cache/nginx/client_temp \
     && chown -R myuser /var/cache/nginx \

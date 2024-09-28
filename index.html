@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>{{ .Values.pageTitle }}</title>
+    <title>{{ .Values.configMapData.pageTitle }}</title>
 
     <!-- box icons -->
     <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
@@ -16,7 +16,7 @@
   <body>
 
     <header class="header">
-      <a href="#" class="logo">{{ .Values.logoText }}</a>
+      <a href="#" class="logo">{{ .Values.configMapData.logoText }}</a>
 
       <i class='bx bx-menu' id="menu-icon"></i>
 
@@ -35,24 +35,24 @@
 
     <section class="home" id="home">
       <div class="home-content">
-        <h3>{{ .Values.greeting }}</h3>
-        <h1>{{ .Values.mainHeading }}</h1>
-        <h3>Sou um <span>{{ .Values.jobTitle }}</span></h3>
-        <p>{{ .Values.description }}</p>
+        <h3>{{ .Values.configMapData.greeting }}</h3>
+        <h1>{{ .Values.configMapData.mainHeading }}</h1>
+        <h3>Sou um <span>{{ .Values.configMapData.jobTitle }}</span></h3>
+        <p>{{ .Values.configMapData.description }}</p>
         <div class="social-media">
-          <a href="{{ .Values.linkedin }}"><i class='bx bxl-linkedin'></i></a>
-          <a href="{{ .Values.whatsapp }}"><i class='bx bxl-whatsapp' ></i></a>
-          <a href="{{ .Values.github }}"><i class='bx bxl-github' ></i></a>
+          <a href="{{ .Values.configMapData.linkedin }}"><i class='bx bxl-linkedin'></i></a>
+          <a href="{{ .Values.configMapData.whatsapp }}"><i class='bx bxl-whatsapp'></i></a>
+          <a href="{{ .Values.configMapData.github }}"><i class='bx bxl-github'></i></a>
         </div>
-        <a href="{{ .Values.cvLink }}" class="btn">Download CV</a>
+        <a href="{{ .Values.configMapData.cvLink }}" class="btn">Download CV</a>
       </div>
     </section>
 
     <section class="about" id="about">
       <div class="about-content">
         <h2 class="heading">Sobre <span>Mim</span></h2>
-        <h3>{{ .Values.jobTitle }}</h3>
-        <p>{{ .Values.aboutDescription }}</p>
+        <h3>{{ .Values.configMapData.jobTitle }}</h3>
+        <p>{{ .Values.configMapData.aboutDescription }}</p>
       </div>
     </section>
 
@@ -63,13 +63,13 @@
         <div class="services-box">
           <i class='bx bx-code-alt'></i>
           <h3>Desenvolvedor Back-end</h3>
-          <p>{{ .Values.backendExperience }}</p>
+          <p>{{ .Values.configMapData.backendExperience }}</p>
         </div>
 
         <div class="services-box">
           <i class='bx bxs-terminal'></i>
           <h3>Engenheiro DevOps</h3>
-          <p>{{ .Values.devOpsExperience }}</p>
+          <p>{{ .Values.configMapData.devOpsExperience }}</p>
         </div>
       </div>
     </section>

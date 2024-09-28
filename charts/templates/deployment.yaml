@@ -1,0 +1,34 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Values.geral.releaseName }}-deployment
+  namespace: {{ .Values.geral.namespace }}
+  labels:
+    app: {{ .Values.geral.releaseName }}
+    desafio: {{ .Values.geral.labels.desafio }}
+spec:
+  replicas: {{ .Values.replicaCount }}
+  selector:
+    matchLabels:
+      app: {{ .Values.geral.releaseName }}
+      desafio: {{ .Values.geral.labels.desafio }}
+  template:
+    metadata:
+      labels:
+        app: {{ .Values.geral.releaseName }}
+        desafio: {{ .Values.geral.labels.desafio }}
+    spec:
+      containers:
+        - name: {{ .Values.geral.releaseName }}
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          ports:
+            - containerPort: {{ .Values.service.port }}
+          volumeMounts:
+            - name: config-volume
+              mountPath: /usr/share/nginx/html/index.html
+              subPath: index.html
+      volumes:
+        - name: config-volume
+          configMap:
+            name: {{ .Values.geral.releaseName }}-config

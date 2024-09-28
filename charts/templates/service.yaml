@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ .Values.geral.releaseName }}-service
+  namespace: {{ .Values.geral.namespace }}
+  labels:
+    app: {{ .Values.geral.releaseName }}
+    desafio: {{ .Values.geral.labels.desafio }}
+spec:
+  ports:
+    - port: {{ .Values.service.port }}
+      targetPort: 80
+      protocol: TCP
+  selector:
+    app: {{ .Values.geral.releaseName }}
+    desafio: {{ .Values.geral.labels.desafio }}

@@ -1,0 +1,40 @@
+name: Deploy to Kubernetes (Minikube)
+
+on:
+  workflow_run:
+    workflows: ["Build and Push Docker Image"]
+    types:
+      - completed
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set kubectl context to Minikube
+        run: |
+          kubectl config use-context minikube
+
+      - name: Deploy application to Kubernetes
+        run: |
+          kubectl create deployment minha-app --image=hermaniosan124/desafio-jack:1.3
+          
+          # Expor a aplicação em uma porta específica
+          kubectl expose deployment minha-app --type=NodePort --port=80
+          
+          # Verificar o status dos pods
+          kubectl get pods
+
+      - name: Get Minikube IP
+        id: minikube_ip
+        run: |
+          echo "MINIKUBE_IP=$(minikube ip)" >> $GITHUB_ENV
+
+      - name: Get Minikube Service URL
+        run: |
+          SERVICE_URL=$(minikube service minha-app --url)
+          echo "SERVICE_URL=$SERVICE_URL" >> $GITHUB_ENV
+          echo "Acesse a aplicação em: $SERVICE_URL"
